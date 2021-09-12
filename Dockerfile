@@ -3,10 +3,6 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN set -ex; \
     apt update && apt install -y --no-install-recommends expect bash fluxbox net-tools socat supervisor novnc x11vnc xvfb xterm firefox geany procps git mpv && apt clean && apt autoremove && rm -rf /var/lib/apt/lists/*
 
-COPY . /app
-RUN mkdir -p .mozilla/firefox/00000000.default-release && mv /app/profiles.ini .mozilla/firefox/ && mv /app/prefs.js .mozilla/firefox/00000000.default-release/
-RUN rm /usr/share/novnc/app/sounds/*
-RUN chmod +x /app/conf.d/websockify.sh
-RUN chmod +x /app/run.sh
-RUN chmod +x /app/expect_vnc.sh
-CMD ["/app/run.sh"]
+COPY . /do
+RUN rm /usr/share/novnc/app/sounds/* && chmod +x /do/conf.d/websockify.sh && chmod +x /do/run.sh && chmod +x /do/expect_vnc.sh && mkdir -p .mozilla/firefox/f83gmwpk.default-release && mv /app/profiles.ini .mozilla/firefox/ && mv /app/prefs.js .mozilla/firefox/f83gmwpk.default-release/
+CMD ["/do/run.sh"]
