@@ -10,4 +10,4 @@ set -ex
 #/usr/bin/chromium --disable-dev-shm-usage --no-sandbox --no-zygote --disable-gpu --disable-sync --no-pings --safebrowsing-disable-auto-update --safebrowsing-disable-download-protection --disable-client-side-phishing-detection
 #EOF
 
-exec supervisord -c /app/supervisord.conf
+exec supervisord -c /do/supervisord.conf
