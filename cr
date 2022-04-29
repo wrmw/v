@@ -1,0 +1,1 @@
+chromium --disable-features=IsolateOrigins,site-per-process --process-per-site --disable-setuid-sandbox --no-sandbox --disable-accelerated-2d-canvas --no-zygote --disable-gpu --disable-sync --no-pings --safebrowsing-disable-auto-update --safebrowsing-disable-download-protection --disable-client-side-phishing-detection --disable-translate
